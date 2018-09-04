@@ -103,6 +103,14 @@
 
   // Produce a duplicate-free version of the array.
   _.uniq = function(array, isSorted, iterator) {
+    var results = [];
+
+    _.each(array, function(value) {
+      if (results.includes(value) === false) {
+        results.push(value);
+      }
+    });
+    return results;
   };
 
 
